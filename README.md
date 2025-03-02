@@ -6,7 +6,7 @@ This FastAPI application fetches paginated data from APIs that support paging (e
 ## Features
 ✅ FastAPI backend with **asynchronous HTTP requests** using `httpx`  
 ✅ Fetches **paginated API data** efficiently  
-✅ **Rate Limit Handling** with `asyncio.sleep()` and slowapi
+✅ **Rate Limit Handling** with `asyncio.sleep()` and slowapi   
 ✅ **CORS Configured** to allow frontend origin  
 ✅ **Saves API data to CSV** for further analysis  
 
