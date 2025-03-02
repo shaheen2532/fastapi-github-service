@@ -3,6 +3,8 @@
 ## Overview
 This FastAPI application fetches paginated data from APIs that support paging (e.g., GitHub API) and writes the collected data to a CSV file. It handles rate limiting efficiently using asynchronous requests with `httpx`.
 
+Keep in mind, that the github API url is IP-restricted to 60 requests per hour for an IP Address. Rate limiting does help.
+
 ## Features
 ✅ FastAPI backend with **asynchronous HTTP requests** using `httpx`  
 ✅ Fetches **paginated API data** efficiently  
