@@ -3,6 +3,7 @@ from dependencies import get_api_key
 from logger import logger
 from functions import fetch_paginated_data, write_to_csv
 
+
 router = APIRouter()
 
 @router.get("/fetch_repos/{username}", dependencies=[Depends(get_api_key)])
