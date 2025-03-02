@@ -40,11 +40,11 @@ uvicorn main:app --reload
 ### **Fetch Repositories from GitHub (Paginated)**
 #### **Endpoint:**
 ```http
-GET /fetch_repos/{username}
+GET /fetch_repos/{username}/{per_page}/{page}
 ```
 #### **Example Request:**
 ```bash
-curl -X GET "http://127.0.0.1:8000/fetch_repos/octocat" -H "X-API-KEY: your_api_key"
+curl -X GET "http://127.0.0.1:8000/fetch_repos/octocat/2/1" -H "X-API-KEY: your_api_key"
 ```
 #### **Example Response:**
 ```json
