@@ -22,10 +22,9 @@ async def fetch_paginated_data(username: str) -> List[dict]:
             
             if response.status_code == 403 and "X-RateLimit-Remaining" in response.headers:
                 reset_time = int(response.headers.get("X-RateLimit-Reset", 0))
-                sleep_time = max(reset_time - asyncio.get_event_loop().time(), 0)
 
-                print(f"Rate limit exceeded. Sleeping for {sleep_time:.2f} seconds...")
-                await asyncio.sleep(sleep_time + 1)  # Adding 1 second buffer
+                print(f"Rate limit exceeded. Sleeping for {reset_time:.2f} seconds...")
+                await asyncio.sleep(reset_time + 1)  # Adding 1 second buffer
                 continue  # Retry the request
 
             if response.status_code != 200:
