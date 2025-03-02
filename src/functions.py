@@ -11,14 +11,13 @@ load_dotenv()
 
 API = os.getenv("GITHUB_API_URL")
 
-async def fetch_paginated_data(username: str) -> List[dict]:
+async def fetch_paginated_data(username: str, per_page: int, page: int) -> List[dict]:
     all_repos = []
-    page = 1
 
     async with httpx.AsyncClient() as client:
         while True:
             # Making request with pagination
-            response = requests.get(API.format(username=username), params={"page": page, "per_page": 30})
+            response = requests.get(API.format(username=username, per_page=per_page, page=page))
             
             if response.status_code == 403 and "X-RateLimit-Remaining" in response.headers:
                 reset_time = int(response.headers.get("X-RateLimit-Reset", 0))
@@ -36,7 +35,6 @@ async def fetch_paginated_data(username: str) -> List[dict]:
                 break
 
             all_repos.extend(repos)
-            page += 1
     
     return all_repos
 

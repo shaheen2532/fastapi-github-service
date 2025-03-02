@@ -6,11 +6,11 @@ from functions import fetch_paginated_data, write_to_csv
 
 router = APIRouter()
 
-@router.get("/fetch_repos/{username}", dependencies=[Depends(get_api_key)])
-async def fetch_repos(username: str):
+@router.get("/fetch_repos/{username}/{per_page}/{page}", dependencies=[Depends(get_api_key)])
+async def fetch_repos(username: str, per_page: int, page: int):
     try:
         # Fetching paginated data
-        repos_data = await fetch_paginated_data(username)
+        repos_data = await fetch_paginated_data(username, per_page, page)
         
         # Writing data to CSV
         write_to_csv(repos_data, f"{username}_repos.csv")
