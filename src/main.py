@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-limiter = Limiter(key_func=get_remote_address, default_limits=["5/minute"])
+limiter = Limiter(key_func=get_remote_address, default_limits=["5/minute"]) #Adjust rate as per your needs
 PORT = os.getenv("PORT")
 
 app = FastAPI(title="FastAPI Paginated API Service", version="1.0")
