@@ -14,7 +14,6 @@ This FastAPI application fetches paginated data from APIs that support paging (e
 ### **1. Clone the Repository**
 ```bash
 git clone https://github.com/yourusername/fastapi-api-fetcher.git
-cd fastapi-api-fetcher
 ```
 
 ### **2. Create a Virtual Environment (Optional but Recommended)**
