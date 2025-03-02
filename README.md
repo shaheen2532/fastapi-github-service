@@ -1,4 +1,4 @@
-# FastAPI Paginated API Fetcher
+# FastAPI Paginated API Service
 
 ## Overview
 This FastAPI application fetches paginated data from APIs that support paging (e.g., GitHub API) and writes the collected data to a CSV file. It handles rate limiting efficiently using asynchronous requests with `httpx`.
